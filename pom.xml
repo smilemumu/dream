@@ -94,6 +94,7 @@
 	<modules>
 		<module>dream-start</module>
 		<module>dream-pay</module>
+		<module>dream-common</module>
 	</modules>
 
 </project>
