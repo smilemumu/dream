@@ -1,6 +1,6 @@
 package com.shizhongcai.common.enums;
 
-public enum ErrorCodes {
+public enum ErrorCodesEnum {
 
     SUCCESS(10000,"成功"),
     DUPLICATE_KEY(10001,"数据库中已存在该记录"),
@@ -18,7 +18,7 @@ public enum ErrorCodes {
      */
     private String msg;
 
-    ErrorCodes(int code, String msg) {
+    ErrorCodesEnum(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }

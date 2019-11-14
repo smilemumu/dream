@@ -12,7 +12,7 @@
 	<groupId>com.shizhongcai</groupId>
 	<artifactId>dream-start</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dream-business</name>
+	<name>dream-start</name>
 	<description>my dream</description>
 
 	<packaging>jar</packaging>

@@ -1,6 +1,6 @@
 package com.shizhongcai.common.domain.vo;
 
-import com.shizhongcai.common.enums.ErrorCodes;
+import com.shizhongcai.common.enums.ErrorCodesEnum;
 import lombok.Data;
 
 @Data
@@ -13,8 +13,8 @@ public class BaseRspVo<T> {
 
     public BaseRspVo (T data){
         this.success = true;
-        this.msg=ErrorCodes.SUCCESS.getMsg();
-        this.errorCode = ErrorCodes.SUCCESS.getCode();
+        this.msg= ErrorCodesEnum.SUCCESS.getMsg();
+        this.errorCode = ErrorCodesEnum.SUCCESS.getCode();
         this.data = data;
     }
     public BaseRspVo (boolean success, String msg, int errorCode) {
@@ -24,15 +24,13 @@ public class BaseRspVo<T> {
     }
 
     public BaseRspVo (boolean success, String msg, int errorCode, T data) {
-        this.success = success;
-        this.msg = msg;
-        this.errorCode = errorCode;
+        this(success,msg,errorCode);
         this.data = data;
     }
 
 
-    public BaseRspVo(ErrorCodes errorCode) {
-        if(errorCode == ErrorCodes.SUCCESS) {
+    public BaseRspVo(ErrorCodesEnum errorCode) {
+        if(errorCode == ErrorCodesEnum.SUCCESS) {
             this.success = true;
         } else {
             this.success = false;
@@ -44,12 +42,12 @@ public class BaseRspVo<T> {
     public static BaseRspVo success(Object data){
         return new BaseRspVo(data);
     }
-    public static BaseRspVo fail(ErrorCodes errorCode){
+    public static BaseRspVo fail(ErrorCodesEnum errorCode){
         return new BaseRspVo(errorCode);
     }
 
     public static BaseRspVo fail(String msg){
-        return new BaseRspVo(false,msg,ErrorCodes.DEFAULT_FAIL.getCode());
+        return new BaseRspVo(false,msg, ErrorCodesEnum.DEFAULT_FAIL.getCode());
     }
 
 
