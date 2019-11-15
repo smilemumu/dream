@@ -45,7 +45,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DuplicateKeyException.class)
     public BaseRspVo handleDuplicateKeyException(DuplicateKeyException e){
         logger.error(e.getMessage());
-        return BaseRspVo.fail(ErrorCodesEnum.NOHANDLER_FOUND);
+        return BaseRspVo.fail(ErrorCodesEnum.NO_HANDLER_FOUND);
     }
+
 
 }
