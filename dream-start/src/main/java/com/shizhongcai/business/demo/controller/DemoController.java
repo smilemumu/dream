@@ -5,10 +5,13 @@ import com.shizhongcai.business.demo.domain.entity.DemoEntity;
 import com.shizhongcai.business.demo.domain.vo.AesTestReqVo;
 import com.shizhongcai.business.common.annotation.AesJson;
 import com.shizhongcai.business.common.domain.vo.BaseRspVo;
+import com.shizhongcai.business.demo.domain.vo.ValidatorReqVo;
 import com.shizhongcai.business.demo.service.DemoService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.Arrays;
 
 /**
@@ -62,6 +65,16 @@ public class DemoController {
     @RateLimit(limitNum = 1)
     @PostMapping(value = "/testRateLimit")
     public BaseRspVo testRateLimit(){
+        return new BaseRspVo<>(Arrays.asList("1","2"));
+    }
+
+    /**
+     * 测试参数校验
+     * @param reqVo
+     * @return
+     */
+    @PostMapping(value = "/testValidate")
+    public BaseRspVo testValidate(@Validated @RequestBody ValidatorReqVo reqVo){
         return new BaseRspVo<>(Arrays.asList("1","2"));
     }
 }

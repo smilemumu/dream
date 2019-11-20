@@ -49,9 +49,6 @@ public class BaseRspVo<T> {
         return new BaseRspVo(errorCode);
     }
 
-    public static BaseRspVo fail(String msg){
-        return new BaseRspVo(false,msg, ErrorCodesEnum.DEFAULT_FAIL.getCode());
-    }
     public static BaseRspVo fail(BaseException e){
         return new BaseRspVo(false,e.getMsg(), ErrorCodesEnum.DEFAULT_FAIL.getCode());
     }

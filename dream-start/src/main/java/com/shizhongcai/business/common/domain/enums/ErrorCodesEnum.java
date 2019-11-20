@@ -4,7 +4,7 @@ public enum ErrorCodesEnum {
 
     SUCCESS(10000,"成功"),
     SYS_ERROR(1000,"系统异常，请稍后再试"),
-    DUPLICATE_KEY(10001,"数据库中已存在该记录"),
+    PARAM_ERROR(10001,"参数异常"),
     NO_HANDLER_FOUND(10002,"路径不存在，请检查路径是否正确"),
     DEFAULT_FAIL(10003,"未知异常，请稍后再试"),
     DECRYPT_ERROR(10004,"解密出错"),
