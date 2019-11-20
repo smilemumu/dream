@@ -2,23 +2,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.shizhongcai</groupId>
+            <artifactId>dream-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>jar</scope>
+        </dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>26.0-android</version>
+		</dependency>
+	</dependencies>
+    <parent>
 		<groupId>com.shizhongcai</groupId>
 		<artifactId>dream</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath/>
 	</parent>
 
+
+
 	<groupId>com.shizhongcai</groupId>
 	<artifactId>dream-start</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dream-start</name>
 	<description>my dream</description>
 
-	<packaging>jar</packaging>
 
 	<profiles>
-
 		<profile> <!-- sit开发环境 -->
 			<id>sit</id>
 			<properties>
@@ -26,7 +40,6 @@
 				<profile.path>config/sit</profile.path>
 			</properties>
 		</profile>
-
 		<profile> <!-- 生产环境 -->
 			<id>prd</id>
 			<properties>
@@ -50,16 +63,23 @@
 		</plugins>
 
 		<resources>
+			<!--可以通过此方式加载-->
+			<!--<resource>-->
+				<!--<directory>src/main/java</directory>-->
+				<!--<includes>-->
+					<!--<include>**/*.properties</include>-->
+				<!--</includes>-->
+			<!--</resource>-->
 			<resource>
 				<directory>src/main/resources/${profile.path}</directory>
 				<filtering>true</filtering>
-			</resource>
+				</resource>
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<excludes>
-					<exclude>**/prd/*.*</exclude>
-					<exclude>**/sit/*.*</exclude>
+					<exclude>config/sit/*</exclude>
+					<exclude>config/prd/*</exclude>
 				</excludes>
 			</resource>
 		</resources>

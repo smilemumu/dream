@@ -1,6 +1,7 @@
-package com.shizhongcai.common.domain.vo;
+package com.shizhongcai.business.common.domain.vo;
 
-import com.shizhongcai.common.enums.ErrorCodesEnum;
+import com.shizhongcai.business.common.domain.enums.ErrorCodesEnum;
+import com.shizhongcai.business.common.exception.BaseException;
 import lombok.Data;
 
 @Data
@@ -10,6 +11,8 @@ public class BaseRspVo<T> {
     private Integer errorCode;
     private T data;
 
+    public BaseRspVo() {
+    }
 
     public BaseRspVo (T data){
         this.success = true;
@@ -49,7 +52,13 @@ public class BaseRspVo<T> {
     public static BaseRspVo fail(String msg){
         return new BaseRspVo(false,msg, ErrorCodesEnum.DEFAULT_FAIL.getCode());
     }
+    public static BaseRspVo fail(BaseException e){
+        return new BaseRspVo(false,e.getMsg(), ErrorCodesEnum.DEFAULT_FAIL.getCode());
+    }
 
+    public static BaseRspVo fail(int code,String msg){
+        return new BaseRspVo(false,msg, code);
+    }
 
 
 

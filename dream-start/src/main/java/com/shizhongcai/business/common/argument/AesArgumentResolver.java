@@ -1,14 +1,15 @@
-package com.shizhongcai.common.argument;
+package com.shizhongcai.business.common.argument;
 
 import com.alibaba.fastjson.JSON;
-import com.shizhongcai.common.annotation.AesJson;
-import com.shizhongcai.common.domain.data.AesBaseParams;
-import com.shizhongcai.common.enums.ErrorCodesEnum;
-import com.shizhongcai.common.exception.BaseException;
+import com.shizhongcai.business.common.annotation.AesJson;
+import com.shizhongcai.business.common.domain.data.AesBaseParams;
+import com.shizhongcai.business.common.domain.enums.ErrorCodesEnum;
+import com.shizhongcai.business.common.exception.BaseException;
 import com.shizhongcai.common.utils.EncryptUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -27,9 +28,11 @@ import java.util.Objects;
  * @Date 2019/11/15 10:51
  */
 public class AesArgumentResolver implements HandlerMethodArgumentResolver {
+
     private static final Logger logger = LoggerFactory.getLogger(AesArgumentResolver.class);
 
-    private final String key = "";
+    @Value("${demo.aes.key}")
+    private String key;
     /**
      * 支持该注解的方法
      * @param methodParameter

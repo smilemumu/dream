@@ -1,6 +1,6 @@
-package com.shizhongcai.common.config.web;
+package com.shizhongcai.business.common.config.web;
 
-import com.shizhongcai.common.argument.AesArgumentResolver;
+import com.shizhongcai.business.common.argument.AesArgumentResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

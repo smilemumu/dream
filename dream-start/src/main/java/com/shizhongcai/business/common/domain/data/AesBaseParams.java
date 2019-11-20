@@ -1,4 +1,4 @@
-package com.shizhongcai.common.domain.data;
+package com.shizhongcai.business.common.domain.data;
 
 import lombok.Data;
 

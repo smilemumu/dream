@@ -1,7 +1,7 @@
-package com.shizhongcai.common.exception;
+package com.shizhongcai.business.common.exception;
 
-import com.shizhongcai.common.domain.vo.BaseRspVo;
-import com.shizhongcai.common.enums.ErrorCodesEnum;
+import com.shizhongcai.business.common.domain.vo.BaseRspVo;
+import com.shizhongcai.business.common.domain.enums.ErrorCodesEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DuplicateKeyException;
@@ -16,14 +16,14 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BaseException.class)
     public BaseRspVo handleTSharkException(BaseException e) {
-        logger.error(e.getMessage());
-        return BaseRspVo.fail(e.getMessage());
+        logger.error("{}",e);
+        return BaseRspVo.fail(e);
     }
 
     @ExceptionHandler(Exception.class)
     public BaseRspVo handleException(Exception e) {
-        logger.error(e.getMessage());
-        return BaseRspVo.fail(e.getMessage());
+        logger.error("{}",e);
+        return BaseRspVo.fail(ErrorCodesEnum.DEFAULT_FAIL);
     }
 
     /**
@@ -33,7 +33,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(NoHandlerFoundException.class)
     public BaseRspVo handlerNoFoundException(Exception e) {
-        logger.error(e.getMessage());
+        logger.error("{}",e);
         return BaseRspVo.fail(ErrorCodesEnum.DUPLICATE_KEY);
     }
 

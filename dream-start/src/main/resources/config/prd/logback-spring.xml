@@ -7,9 +7,9 @@
     <property name="FILE_PATH" value="/root/logs/dream/" />
     <!-- 文件 -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${FILE_PATH}/native.log</file>
+        <file>${FILE_PATH}/dream.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${FILE_PATH}/native.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${FILE_PATH}/dream.%d{yyyy-MM-dd}.log</fileNamePattern>
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -26,6 +26,7 @@
 
     <root level="info">
         <appender-ref ref="FILE" />
+        <appender-ref ref="CONSOLE"/>
     </root>
 
 
