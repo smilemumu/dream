@@ -57,7 +57,4 @@ public class BaseRspVo<T> {
         return new BaseRspVo(false,msg, code);
     }
 
-
-
-
 }

@@ -37,11 +37,11 @@ public class ValidatorReqVo{
     @Range(min = 1,max = 10,message = "最小为1，最大为10")
     private Integer range;
 
-    @NotBlank
+    @NotBlank(message = "email不能为空")
     @Email
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "字符串不能为空")
     @Size(min = 10,max = 20,message = "字符串长度在10-20之间")
     private String strSize;
 
