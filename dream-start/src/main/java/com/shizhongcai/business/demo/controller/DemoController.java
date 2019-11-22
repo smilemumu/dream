@@ -75,6 +75,7 @@ public class DemoController {
      */
     @PostMapping(value = "/testValidate")
     public BaseRspVo testValidate(@Validated @RequestBody ValidatorReqVo reqVo){
-        return new BaseRspVo<>(Arrays.asList("1","2"));
+        System.out.println(1);
+        return new BaseRspVo<>(reqVo);
     }
 }

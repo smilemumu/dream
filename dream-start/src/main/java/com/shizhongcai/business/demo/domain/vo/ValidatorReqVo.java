@@ -1,10 +1,15 @@
 package com.shizhongcai.business.demo.domain.vo;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.shizhongcai.common.serializer.*;
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -22,6 +27,15 @@ public class ValidatorReqVo{
     @Future(message = "格式为yyyy-MM-dd,且为将来时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date future;
+
+    @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    private LocalDate localDate;
+
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime localDateTime;
+
 
     @NotNull
     @DecimalMin(value = "0.1")
