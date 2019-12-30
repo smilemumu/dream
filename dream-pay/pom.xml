@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
 
+	<!-- 基本信息 -->
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>dream-pay</artifactId>
+	<name>dream-pay</name>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<!-- 继承本项目的父工程 -->
 	<parent>
 		<groupId>com.shizhongcai</groupId>
 		<artifactId>dream</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<relativePath/>
+		<version>1.0.0</version>
 	</parent>
 
-	<groupId>com.shizhongcai</groupId>
-	<artifactId>dream-pay</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>dream-pay</name>
-	<description>my dream</description>
 
-	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<artifactId>dream-common</artifactId>
+			<groupId>com.shizhongcai</groupId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
 
 </project>

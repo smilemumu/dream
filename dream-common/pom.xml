@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>dream</artifactId>
-        <groupId>com.shizhongcai</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+
+    <!-- 基本信息 -->
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>dream-common</artifactId>
-
     <name>dream-common</name>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- 继承本项目的父工程 -->
+    <parent>
+        <groupId>com.shizhongcai</groupId>
+        <artifactId>dream</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-    </properties>
 
     <dependencies>
         <dependency>
@@ -35,6 +33,17 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.9</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
