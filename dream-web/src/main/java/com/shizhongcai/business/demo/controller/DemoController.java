@@ -7,12 +7,10 @@ import com.shizhongcai.business.common.annotation.AesJson;
 import com.shizhongcai.business.common.domain.vo.BaseRspVo;
 import com.shizhongcai.business.demo.domain.vo.ValidatorReqVo;
 import com.shizhongcai.business.demo.service.DemoService;
-import com.shizhongcai.pay.service.impl.AliPayService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
 import java.util.Arrays;
 
 /**
