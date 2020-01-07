@@ -81,7 +81,7 @@ public class WebLogAspect {
         }
         String method = joinPoint.getSignature().getName();
         //此处index = -1的时候表示无参数，此时调用joinPoint.getArgs[index]会报错空指针异常
-        LOG.info("请求类型{}，请求方法{},入参 {}",request.getMethod(),method,index==-1?"为空":JSON.toJSONString(joinPoint.getArgs()[index]));
+//        LOG.info("请求类型{}，请求方法{},入参 {}",request.getMethod(),method,index==-1?"为空":JSON.toJSONString(joinPoint.getArgs()[index]));
         //执行方法本身
         //此处还可以加锁，防止接口重复调用
         Object obj;

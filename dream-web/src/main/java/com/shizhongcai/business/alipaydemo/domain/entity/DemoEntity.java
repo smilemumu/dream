@@ -1,4 +1,4 @@
-package com.shizhongcai.business.demo.domain.entity;
+package com.shizhongcai.business.alipaydemo.domain.entity;
 
 import lombok.Data;
 

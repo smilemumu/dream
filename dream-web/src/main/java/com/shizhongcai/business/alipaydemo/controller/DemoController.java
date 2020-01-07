@@ -1,12 +1,12 @@
-package com.shizhongcai.business.demo.controller;
+package com.shizhongcai.business.alipaydemo.controller;
 
 import com.shizhongcai.business.common.annotation.RateLimit;
-import com.shizhongcai.business.demo.domain.entity.DemoEntity;
-import com.shizhongcai.business.demo.domain.vo.AesTestReqVo;
+import com.shizhongcai.business.alipaydemo.domain.entity.DemoEntity;
+import com.shizhongcai.business.alipaydemo.domain.vo.AesTestReqVo;
 import com.shizhongcai.business.common.annotation.AesJson;
 import com.shizhongcai.business.common.domain.vo.BaseRspVo;
-import com.shizhongcai.business.demo.domain.vo.ValidatorReqVo;
-import com.shizhongcai.business.demo.service.DemoService;
+import com.shizhongcai.business.alipaydemo.domain.vo.ValidatorReqVo;
+import com.shizhongcai.business.alipaydemo.service.DemoService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.shizhongcai.business.demo.domain.vo;
+package com.shizhongcai.business.alipaydemo.domain.vo;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

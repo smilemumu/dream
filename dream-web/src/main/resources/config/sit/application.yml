@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8080
   servlet:
     context-path: /dream
 
@@ -23,7 +23,7 @@ spring:
 
 #包含common文件
   profiles:
-    include: common
+    include: common,pay
 
 
 

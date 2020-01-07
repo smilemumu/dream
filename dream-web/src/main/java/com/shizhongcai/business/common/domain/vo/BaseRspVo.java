@@ -41,7 +41,9 @@ public class BaseRspVo<T> {
         this.msg = errorCode.getMsg();
         this.errorCode = errorCode.getCode();
     }
-
+    public static BaseRspVo success(){
+        return new BaseRspVo();
+    }
     public static BaseRspVo success(Object data){
         return new BaseRspVo(data);
     }

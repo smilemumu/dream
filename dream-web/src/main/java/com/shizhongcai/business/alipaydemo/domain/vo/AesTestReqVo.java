@@ -1,4 +1,4 @@
-package com.shizhongcai.business.demo.domain.vo;
+package com.shizhongcai.business.alipaydemo.domain.vo;
 
 import com.shizhongcai.business.common.domain.vo.BaseReqVo;
 import lombok.Data;
